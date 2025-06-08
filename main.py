@@ -5,12 +5,12 @@ from torchvision import datasets, transforms, utils as vutils
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-from models.VAE_CNN import VariationalAutoEncoder, CNN, VQVAE
-from models.GANS import ConditionalGAN, BigGAN
-from engine.train import train_model, train_gan, train_vqvae, train_biggan
-from inference.inference_plot import evaluate_cnn
 from diffusers import UNet2DConditionModel, DDPMScheduler, UNet2DModel
 from torchvision.transforms import functional as TF
+from VAE import VariationalAutoEncoder, CNN, VQVAE
+from GANS import ConditionalGAN, BigGAN
+from engine import train_model, train_gan, train_vqvae, train_biggan
+from inference_plot import evaluate_cnn
 
 # Device setup
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
